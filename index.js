@@ -9,19 +9,11 @@ require('dotenv').config();
 const app = express();
 
 // EdgeDB setup
-let edgedbClient;
-if (process.env.VERCEL_ENV === 'production') {
-  edgedbClient = edgedb.createClient({
-    tlsSecurity: 'strict',
-    host: process.env.EDGEDB_HOST,
-    port: process.env.EDGEDB_PORT,
-    user: process.env.EDGEDB_USER,
-    password: process.env.EDGEDB_PASSWORD,
-    database: process.env.EDGEDB_DATABASE,
-  });
-} else {
-  edgedbClient = edgedb.createClient();
-}
+const edgedbClient = edgedb.createClient({
+  instanceName: process.env.EDGEDB_INSTANCE,
+  secretKey: process.env.EDGEDB_SECRET_KEY,
+  tlsSecurity: 'strict',
+});
 
 // Middleware setup
 app.use(express.json());
@@ -41,7 +33,7 @@ app.use(passport.session());
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: `${process.env.BASE_URL}/auth/github/callback`
+  callbackURL: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/auth/github/callback`
 },
 async function(accessToken, refreshToken, profile, done) {
   try {
