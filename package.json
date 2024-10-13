@@ -1,0 +1,23 @@
+{
+    "name": "resolved-proxy-platform",
+    "version": "1.0.0",
+    "main": "start.js",
+    "scripts": {
+        "start": "node start.js",
+        "dev": "nodemon start.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "axios": "^0.21.1",
+        "node-cron": "^3.0.0",
+        "edgedb": "^1.0.0",
+        "dotenv": "^10.0.0",
+        "express-session": "^1.17.2",
+        "passport": "^0.5.0",
+        "passport-github2": "^0.1.12"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7",
+        "tailwindcss": "^2.2.19"
+    }
+}

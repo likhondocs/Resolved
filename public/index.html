@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolved Proxy Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta property="og:title" content="Resolved Proxy Platform">
+    <meta property="og:description" content="Fast and reliable proxy lists updated hourly. Access HTTP, SOCKS4, and SOCKS5 proxies.">
+    <meta property="og:image" content="https://resolved-alpha.vercel.app/og-image.jpg">
+    <meta property="og:url" content="https://resolved-alpha.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        :root {
+            --ds-background-100: #f3f4f6;
+            --ds-background-200: #e5e7eb;
+        }
+        body {
+            background-color: var(--ds-background-100);
+        }
+        .bg-custom-200 {
+            background-color: var(--ds-background-200);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Resolved Proxy Platform</h1>
+            <nav>
+                <a href="/auth/github" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                    Login with GitHub
+                </a>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Access proxy lists via API endpoints:</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><code class="bg-gray-100 px-2 py-1 rounded">/api/proxies/http</code> - HTTP proxies</li>
+                <li><code class="bg-gray-100 px-2 py-1 rounded">/api/proxies/socks4</code> - SOCKS4 proxies</li>
+                <li><code class="bg-gray-100 px-2 py-1 rounded">/api/proxies/socks5</code> - SOCKS5 proxies</li>
+            </ul>
+        </div>
+        <div class="bg-custom-200 rounded-lg p-6">
+            <h2 class="text-xl font-semibold mb-4">About Resolved Proxy Platform</h2>
+            <p class="mb-4">This platform provides fast and reliable proxy lists updated every hour. Use these proxies responsibly and in accordance with applicable laws and regulations.</p>
+            <p>For more information, visit our <a href="https://github.com/ResolvedBuilders/Resolved" class="text-blue-600 hover:underline">GitHub repository</a>.</p>
+        </div>
+    </main>
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>Powered by <a href="https://t.me/RexxLounge" class="text-blue-400 hover:underline">RexxLounge</a> | 
+               Join our <a href="https://t.me/RexxCheat" class="text-blue-400 hover:underline">Telegram Channel</a></p>
+            <p class="mt-2">&copy; 2024 Resolved Proxy Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
